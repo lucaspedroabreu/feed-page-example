@@ -7,7 +7,7 @@ import { PostContentOne } from "../../@consts/PostContentOne"
 import { HandsClapping, ThumbsUp } from "phosphor-react"
 
 import type { IPost } from "../../@types/Global"
-import { FormEvent, InvalidEvent, useRef, useState } from "react"
+import { ChangeEvent, FormEvent, InvalidEvent, useRef, useState } from "react"
 import { useUserContext } from "../../contexts/UserContext"
 
 function capitalize(string: string) {
@@ -73,14 +73,17 @@ export function Post({ post }: PostDTO) {
   }
 
   function handleNewCommentValidation(
-    event:
-      | InvalidEvent
-      | FormEvent
-      | InputEvent
-      | ErrorEvent
-      | Event
-      | SubmitEvent
-  ) {}
+    event: InvalidEvent<HTMLTextAreaElement>
+  ) {
+    event.target.setCustomValidity("Digite um comentário válido!")
+  }
+
+  function handleUpdateNewCommentValidation(
+    event: ChangeEvent<HTMLTextAreaElement>
+  ) {
+    event.target.setCustomValidity("")
+    setIsValidInput(textareaRef.current?.value !== "")
+  }
 
   function deleteComment(commentId: string) {
     setComments(comments.filter((comment) => comment.id !== commentId))
@@ -136,10 +139,8 @@ export function Post({ post }: PostDTO) {
             <textarea
               name="comment"
               required
-              onChange={() =>
-                setIsValidInput(textareaRef.current?.value !== "")
-              }
-              // onInvalid={handleNewCommentValidation}
+              onChange={handleUpdateNewCommentValidation}
+              onInvalid={handleNewCommentValidation}
               ref={textareaRef}
               placeholder="Deixe seu comentário"
               className="w-full bg-gray-900 border-0 resize-none h-32 p-4 rounded-lg leading-6 mt-4 outline-none focus:outline-emerald-600"

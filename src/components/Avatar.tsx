@@ -1,6 +1,7 @@
 import { UserCircle } from "phosphor-react"
+import { ImgHTMLAttributes } from "react"
 
-interface AvatarProps {
+interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   user: {
     name: string
     avatar_url?: string
@@ -8,9 +9,10 @@ interface AvatarProps {
   hasOutline?: boolean
 }
 
-export function Avatar({ user, hasOutline = true }: AvatarProps) {
+export function Avatar({ user, hasOutline = true, ...props }: AvatarProps) {
   return user.avatar_url ? (
     <img
+      {...props}
       src={user.avatar_url}
       alt={user.name}
       width={52}
