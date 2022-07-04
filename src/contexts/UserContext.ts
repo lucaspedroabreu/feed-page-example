@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react"
-import { IAuthor } from "../pages/Home.d"
+import { IAuthor } from "../@types/Global"
 
 interface IUserContext {
   user: IAuthor | null

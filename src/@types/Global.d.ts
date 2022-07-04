@@ -22,7 +22,7 @@ export type IComment = {
 export type IPost = {
   id: string
   title: string
-  body: string | ReactNode | ReactElement
+  body: string | ReactElement
   author: IAuthor
   likes: number
   published_at: Date

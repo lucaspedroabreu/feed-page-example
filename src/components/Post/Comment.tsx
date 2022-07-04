@@ -2,7 +2,7 @@ import { HandsClapping, Trash } from "phosphor-react"
 import { useState } from "react"
 import { Avatar } from "../Avatar"
 
-import type { IComment } from "../../pages/Home.d"
+import type { IComment } from "../../@types/Global"
 import { ptBR } from "date-fns/locale"
 import { format, formatDistanceToNow } from "date-fns"
 import { useUserContext } from "../../contexts/UserContext"

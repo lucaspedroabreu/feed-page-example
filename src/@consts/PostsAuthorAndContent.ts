@@ -1,4 +1,4 @@
-import type { IAuthor, IComment, IPost } from "./Home.d"
+import type { IAuthor, IComment, IPost } from "../@types/Global"
 import { PostContentOne } from "./PostContentOne"
 
 const authorOne: IAuthor = {

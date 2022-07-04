@@ -1,5 +1,5 @@
 import { UserContext } from "./contexts/UserContext"
-import { User } from "./pages/@consts"
+import { User } from "./@consts/PostsAuthorAndContent"
 import { Home } from "./pages/Home"
 
 // import "./App.css"

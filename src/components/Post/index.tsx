@@ -1,12 +1,12 @@
-import { formatDistanceToNow, formatDistanceToNowStrict } from "date-fns"
+import { formatDistanceToNow } from "date-fns"
 import format from "date-fns/format"
 import ptBR from "date-fns/locale/pt-BR"
 import { Comment } from "./Comment"
 import { Avatar } from "../Avatar"
-import { PostContentOne } from "../../pages/PostContentOne"
+import { PostContentOne } from "../../@consts/PostContentOne"
 import { HandsClapping, ThumbsUp } from "phosphor-react"
 
-import type { IPost } from "../../pages/Home.d"
+import type { IPost } from "../../@types/Global"
 import { FormEvent, InvalidEvent, useRef, useState } from "react"
 import { useUserContext } from "../../contexts/UserContext"
 
