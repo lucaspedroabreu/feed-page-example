@@ -1,0 +1,48 @@
+.logoIgnite {
+  height: 5.6em;
+  padding: 1.5em 0;
+  will-change: filter;
+}
+
+.logoVite {
+  height: 5.6em;
+  padding: 1.5em 0;
+  will-change: filter;
+}
+
+.logoReact {
+  height: 5.6em;
+  padding: 1.5em 0;
+  will-change: filter;
+}
+
+.logoIgnite:hover {
+  filter: drop-shadow(0 0 1.8em #00b37e);
+  transform: scale(1.05);
+  transition: all ease-in-out 150ms;
+}
+
+.logoVite:hover {
+  filter: drop-shadow(0 0 1.2em #646cffaa);
+  transform: scale(1.05);
+  transition: all ease-in-out 150ms;
+}
+
+.logoReact:hover {
+  filter: drop-shadow(0 0 1.2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logoReact {
+    animation: logo-spin infinite 15s linear;
+  }
+}
